@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>health_form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+    <form (ngSubmit)="updateHealth()">
+        <ion-item>
+            <ion-label>Blood Group</ion-label>
+            <ion-input type="text" [(ngModel)]="student.bloodgr" name="bloodgr"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Vision</ion-label>
+            <ion-input [(ngModel)]="student.vision" name="visionleft"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Mental State</ion-label>
+            <ion-input [(ngModel)]="student.mentalstate" name="Mental State"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Allergies</ion-label>
+            <ion-input [(ngModel)]="student.allergies" name="Allergies"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>weight</ion-label>
+            <ion-input [(ngModel)]="student.weight" name="rollno"></ion-input>
+          </ion-item>
+          <ion-item>
+          <ion-label>height</ion-label>
+            <ion-input [(ngModel)]="student.height" name="fname"></ion-input>
+          </ion-item>
+          <ion-item>
+          <ion-label>dentalstate</ion-label>
+            <ion-input [(ngModel)]="student.dentalstate" name="mname"></ion-input>
+          </ion-item>
+          <ion-item>
+          <ion-label>pulserate</ion-label>
+            <ion-input [(ngModel)]="student.pulserate" name="DOB"></ion-input>
+          </ion-item>
+          <ion-item>
+          <ion-label>bloodpressure</ion-label>
+            <ion-input [(ngModel)]="student.bloodpressure" name="Gender"></ion-input>
+          </ion-item>
+        
+          <br>
+        
+        <ion-button ion-button type="submit" block>Update Health</ion-button>
+      </form>
+</ion-content>

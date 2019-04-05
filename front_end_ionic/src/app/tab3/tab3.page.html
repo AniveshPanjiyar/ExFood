@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Circulars
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+
+    <ion-card *ngFor="let update of updates" class="welcome-card">
+        <!-- <ion-img src= "{{feed.imagePath}}"  ></ion-img> -->
+        <ion-card-header>
+          <!-- <ion-card-subtitle></ion-card-subtitle> -->
+          <ion-card-title><ion-icon name="calendar"></ion-icon>{{update.date}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>{{update.desc}}</p>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

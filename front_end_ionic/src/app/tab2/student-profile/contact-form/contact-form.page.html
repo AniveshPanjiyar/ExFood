@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>contact-form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <form (ngSubmit)="addContact()">
+        <ion-item>
+          <ion-label>email</ion-label>
+          <ion-input type="text" [(ngModel)]="student.email" name="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>fmail</ion-label>
+          <ion-input [(ngModel)]="student.fmail" name="fmail"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>phno</ion-label>
+          <ion-input [(ngModel)]="student.phno" name="phno"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>fno</ion-label>
+          <ion-input [(ngModel)]="student.fno" name="fno"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>mno</ion-label>
+          <ion-input [(ngModel)]="student.mno" name="mno"></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label>address</ion-label>
+          <ion-input [(ngModel)]="student.address" name="address"></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label>city</ion-label>
+          <ion-input [(ngModel)]="student.city" name="city"></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label>state</ion-label>
+          <ion-input [(ngModel)]="student.state" name="state"></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label>pincode</ion-label>
+          <ion-input [(ngModel)]="student.pincode" name="pincode"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+        <ion-label>Hobby</ion-label>
+          <ion-input [(ngModel)]="student.hobby" name="Hobby"></ion-input>
+        </ion-item>
+        
+        <br>
+        
+        <ion-button ion-button type="submit" block>Add Student</ion-button>
+      </form>
+
+</ion-content>

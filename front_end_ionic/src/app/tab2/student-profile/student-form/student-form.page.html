@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>studentForm_form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+    <form (ngSubmit)="addUser()">
+        <ion-item>
+          <ion-label>Name</ion-label>
+          <ion-input type="text" [(ngModel)]="studentForm.name" name="name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Age</ion-label>
+          <ion-input [(ngModel)]="studentForm.age" name="age"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>RollNo</ion-label>
+          <ion-input [(ngModel)]="studentForm.rollno" name="rollno"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>section</ion-label>
+          <ion-input [(ngModel)]="studentForm.section" name="section"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Class</ion-label>
+          <ion-input [(ngModel)]="studentForm.class" name="class"></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label>Fathers name</ion-label>
+          <ion-input [(ngModel)]="studentForm.fname" name="fname"></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label>mothers name</ion-label>
+          <ion-input [(ngModel)]="studentForm.mname" name="mname"></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label>DOB</ion-label>
+          <ion-input [(ngModel)]="studentForm.dob" name="DOB"></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label>Gender</ion-label>
+          <ion-input [(ngModel)]="studentForm.gender" name="Gender"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+        <ion-label>Hobby</ion-label>
+          <ion-input [(ngModel)]="studentForm.hobby" name="Hobby"></ion-input>
+        </ion-item>
+        
+        <br>
+        
+        <ion-button ion-button type="submit" block>Add studentForm</ion-button>
+      </form>
+
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+         Students
+        </ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+  <!--   <ion-item><ion-button (click)="openStudentForm()"><ion-icon name="add" ></ion-icon>Add Students</ion-button></ion-item> -->
+
+  <ion-card  *ngFor="let student of students" style="margin-left: 0px;margin-right: 0px; width: 100%;" (click)="openprofile(student._id)"  >
+    <ion-item style="height: 40px;">
+
+
+
+      <ion-avatar item-start>
+       <img src="{{student.imagepath}}">
+      </ion-avatar>
+       <h6>ID:{{student.name}}</h6>
+      <h3></h3>
+
+
+    </ion-item>
+    <br>
+
+    <ion-row>
+      <ion-col col-3>
+       
+        <ion-icon name="person" style="font-size: 0.7em "> </ion-icon>
+        {{student.dob}}
+      </ion-col>
+      <ion-col col-9>
+   
+         
+         Gender:{{student.gender}}
+
+        
+      </ion-col>
+    </ion-row>
+
+
+
+
+
+
+  </ion-card>
+</ion-content>

@@ -1,0 +1,204 @@
+<ion-header>
+  <!-- <ion-navbar >
+      <ion-title> Profile </ion-title>
+  </ion-navbar> -->
+
+  <shrinking-segment-header [scrollArea]="myContent" headerHeight="150">
+      <img src="{{studentDetail?.imagepath}}" height="200px"/>
+      <h2></h2>
+  </shrinking-segment-header>
+
+  <ion-toolbar color="light" mode="md">
+    <ion-segment color="dark" mode="md" [(ngModel)]="section">
+      <ion-segment-button  value="one">Basic       </ion-segment-button>
+      <ion-segment-button  value="two">  Contacts  </ion-segment-button>
+      <ion-segment-button  value="three"> Health </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content fullscreen #myContent>
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+
+  <div [ngSwitch]="section"   (tabChanged)="onTabChanged($event)" class="swipe-area" >
+
+    <div *ngSwitchCase="'one'" padding>
+      
+        <ion-row>
+            <ion-col class="key"> Name: </ion-col>
+            <ion-col ion-text class="value"> {{studentDetail?.name}}</ion-col>
+          </ion-row>
+      
+          <ion-row>
+            <ion-col class="key">Age: </ion-col>
+            <ion-col ion-text class="value"> {{studentDetail?.age}}</ion-col>
+          </ion-row>
+        
+          <ion-row>
+            <ion-col class="key"> RollNo:</ion-col>
+            <ion-col ion-text class="value"> {{studentDetail?.rollno}} </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col class="key"> Class: </ion-col>
+              <ion-col ion-text class="value"> {{studentDetail?.class}} </ion-col>
+            </ion-row>
+        
+          <ion-row>
+            <ion-col class="key"> section: </ion-col>
+            <ion-col ion-text class="value"> {{studentDetail?.section}} </ion-col>
+          </ion-row>
+        
+          <ion-row>
+            <ion-col class="key"> Fathers name: </ion-col>
+            <ion-col ion-text class="value">{{studentDetail?.fname}} </ion-col>
+          </ion-row>
+        
+          <ion-row>
+            <ion-col class="key"> mothers name:</ion-col>
+            <ion-col ion-text class="value"> {{studentDetail?.mname}}</ion-col>
+          </ion-row>
+        
+          <ion-row>
+            <ion-col class="key"> DOB: </ion-col>
+            <ion-col ion-text class="value">{{studentDetail?.dob}} </ion-col>
+          </ion-row>
+        
+          <ion-row>
+            <ion-col class="key"> Gender: </ion-col>
+            <ion-col ion-text class="value">{{studentDetail?.gender}} </ion-col>
+          </ion-row>
+        
+          <ion-row>
+            <ion-col class="key">Hobby:</ion-col>
+            <ion-col ion-text class="value">{{studentDetail?.hobby}}</ion-col>
+          </ion-row>
+
+          <ion-item><ion-button (click)="openstudentForm(studentDetail?._id)"><ion-icon name="add"></ion-icon>Update Details</ion-button></ion-item>
+        
+         
+        </div>
+
+    <div *ngSwitchCase="'two'" padding>
+        <ion-row>
+            <ion-col  class="key">email:</ion-col>
+            <ion-col ion-text class="value">{{studentDetail?.email}}</ion-col>
+          </ion-row>
+       
+          <ion-row>
+           <ion-col  class="key">  fmail: </ion-col>
+              <ion-col ion-text class="value"> {{studentDetail?.fmail}} </ion-col>
+          </ion-row>
+        
+          <ion-row>
+           <ion-col  class="key">  memail: </ion-col>
+            <ion-col ion-text class="value">{{studentDetail?.memail}}</ion-col>
+          </ion-row>
+              
+          <ion-row>
+             <ion-col  class="key">  phno:</ion-col>
+             <ion-col ion-text class="value">{{studentDetail?.phno}}</ion-col>
+          </ion-row>
+            
+          <ion-row>
+            <ion-col class="key">  fno:</ion-col>
+            <ion-col ion-text class="value">{{studentDetail?.fno}}</ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col  class="key">mno:</ion-col>
+              <ion-col ion-text class="value">{{studentDetail?.mno}}</ion-col>
+            </ion-row>
+         
+            <ion-row>
+             <ion-col  class="key">  address: </ion-col>
+                <ion-col ion-text class="value"> {{studentDetail?.address}} </ion-col>
+            </ion-row>
+          
+            <ion-row>
+             <ion-col  class="key">  city: </ion-col>
+              <ion-col ion-text class="value">{{studentDetail?.city}}</ion-col>
+            </ion-row>
+                
+            <ion-row>
+               <ion-col  class="key">  state:</ion-col>
+               <ion-col ion-text class="value">{{studentDetail?.state}}</ion-col>
+            </ion-row>
+              
+            <ion-row>
+              <ion-col class="key">  pincode:</ion-col>
+              <ion-col ion-text class="value">{{studentDetail?.pincode}}</ion-col>
+            </ion-row>
+          <br>
+          <ion-item><ion-button (click)="openContactForm(studentDetail?._id)"><ion-icon name="add"></ion-icon>Update Contacts</ion-button></ion-item>
+        </div>
+
+    <ion-list *ngSwitchCase="'three'">
+        <ion-row>
+            <ion-col  class="key">bloodgr:</ion-col>
+            <ion-col ion-text class="value">{{studentDetail?.bloodgr}}</ion-col>
+          </ion-row>
+       
+          <ion-row>
+           <ion-col  class="key">  fmail: </ion-col>
+              <ion-col ion-text class="value"> {{studentDetail?.age}} </ion-col>
+          </ion-row>
+        
+          <ion-row>
+           <ion-col  class="key">  vision: </ion-col>
+            <ion-col ion-text class="value">{{studentDetail?.vision}}</ion-col>
+          </ion-row>
+              
+          <ion-row>
+             <ion-col  class="key">  vision:</ion-col>
+             <ion-col ion-text class="value">{{studentDetail?.vision}}</ion-col>
+          </ion-row>
+            
+          <ion-row>
+            <ion-col class="key">  allergies:</ion-col>
+            <ion-col ion-text class="value">{{studentDetail?.allergies}}</ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col  class="key">weight:</ion-col>
+              <ion-col ion-text class="value">{{studentDetail?.weight}}</ion-col>
+            </ion-row>
+         
+            <ion-row>
+             <ion-col  class="key">  height: </ion-col>
+                <ion-col ion-text class="value"> {{studentDetail?.height}} </ion-col>
+            </ion-row>
+          
+            <ion-row>
+             <ion-col  class="key">  dentalstate: </ion-col>
+              <ion-col ion-text class="value">{{studentDetail?.dentalstate}}</ion-col>
+            </ion-row>
+                
+            <ion-row>
+               <ion-col  class="key">  hearing:</ion-col>
+               <ion-col ion-text class="value">{{studentDetail?.hearing}}</ion-col>
+            </ion-row>
+              
+            <ion-row>
+              <ion-col class="key">  pulserate:</ion-col>
+              <ion-col ion-text class="value">{{studentDetail?.pulserate}}</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col class="key">  bloodpressure:</ion-col>
+                <ion-col ion-text class="value">{{studentDetail?.bloodpressure}}</ion-col>
+              </ion-row>
+          <br>
+     <ion-item><ion-button (click)="openHealthForm(studentDetail?._id)"><ion-icon name="add"></ion-icon>Update Details</ion-button></ion-item>
+      
+    </ion-list>
+
+  </div>
+
+</ion-content>
